@@ -6,6 +6,7 @@ import {IAcademicDegree} from "./components/TableViewer/interfacesTable.ts";
 import SelectTable from "./components/SelectTable/SelectTable";
 import TableViewer from "./components/TableViewer/TableViewer";
 import MainContainer from "./containers/MainContainer/MainContainer";
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 const App = () => {
 

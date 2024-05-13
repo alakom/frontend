@@ -29,16 +29,16 @@ export const ColumnsAcademicDegree: TableProps<IAcademicDegree>['columns'] = [
         dataIndex: 'descr',
         key: 'descr',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 
 export const ColumnsAcademicRank: TableProps<IAcademicRank>['columns'] = [
@@ -52,16 +52,16 @@ export const ColumnsAcademicRank: TableProps<IAcademicRank>['columns'] = [
         dataIndex: 'descr',
         key: 'descr',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 
 export const ColumnsDepartment: TableProps<IDepartment>['columns'] = [
@@ -80,16 +80,16 @@ export const ColumnsDepartment: TableProps<IDepartment>['columns'] = [
         dataIndex: 'descr',
         key: 'descr',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 
 export const ColumnsDiscipline: TableProps<IDiscipline>['columns'] = [
@@ -252,16 +252,16 @@ export const ColumnsDiscipline: TableProps<IDiscipline>['columns'] = [
         dataIndex: 'contr',
         key: 'contr',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 
 export const ColumnsDisciplineParameter: TableProps<IDisciplineParameter>['columns'] = [
@@ -280,16 +280,16 @@ export const ColumnsDisciplineParameter: TableProps<IDisciplineParameter>['colum
         dataIndex: 'cost',
         key: 'cost',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 
 export const ColumnsDisciplineType: TableProps<IDisciplineType>['columns'] = [
@@ -303,16 +303,16 @@ export const ColumnsDisciplineType: TableProps<IDisciplineType>['columns'] = [
         dataIndex: 'descr',
         key: 'descr',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 
 export const ColumnsEmployee: TableProps<IEmployee>['columns'] = [
@@ -356,16 +356,16 @@ export const ColumnsEmployee: TableProps<IEmployee>['columns'] = [
         dataIndex: 'academicDegree',
         key: 'academicDegree',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 
 export const ColumnsFaculty: TableProps<IFaculty>['columns'] = [
@@ -384,16 +384,16 @@ export const ColumnsFaculty: TableProps<IFaculty>['columns'] = [
         dataIndex: 'fullName',
         key: 'fullName',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsNormas: TableProps<INormas>['columns'] = [
     {
@@ -416,16 +416,16 @@ export const ColumnsNormas: TableProps<INormas>['columns'] = [
         dataIndex: 'comment',
         key: 'comment',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsQualification: TableProps<IQualification>['columns'] = [
     {
@@ -438,16 +438,16 @@ export const ColumnsQualification: TableProps<IQualification>['columns'] = [
         dataIndex: 'descr',
         key: 'descr',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsSemester: TableProps<ISemester>['columns'] = [
     {
@@ -465,16 +465,16 @@ export const ColumnsSemester: TableProps<ISemester>['columns'] = [
         dataIndex: 'weekCount',
         key: 'weekCount',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsSpeciality: TableProps<ISpeciality>['columns'] = [
     {
@@ -492,16 +492,16 @@ export const ColumnsSpeciality: TableProps<ISpeciality>['columns'] = [
         dataIndex: 'faculty',
         key: 'faculty',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsStudent: TableProps<IStudent>['columns'] = [
     {
@@ -514,16 +514,16 @@ export const ColumnsStudent: TableProps<IStudent>['columns'] = [
         dataIndex: 'descr',
         key: 'descr',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsStudentsGroup: TableProps<IStudentsGroup>['columns'] = [
     {
@@ -566,16 +566,16 @@ export const ColumnsStudentsGroup: TableProps<IStudentsGroup>['columns'] = [
         dataIndex: 'subgroupCount',
         key: 'subgroupCount',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsStudyForm: TableProps<IStudyForm>['columns'] = [
     {
@@ -593,16 +593,16 @@ export const ColumnsStudyForm: TableProps<IStudyForm>['columns'] = [
         dataIndex: 'descrRus',
         key: 'descrRus',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 
 export const ColumnsStudyYear: TableProps<IStudyYear>['columns'] = [
@@ -616,16 +616,16 @@ export const ColumnsStudyYear: TableProps<IStudyYear>['columns'] = [
         dataIndex: 'studyYear',
         key: 'studyYear',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsWorkingPosition: TableProps<IWorkingPosition>['columns'] = [
     {
@@ -638,16 +638,16 @@ export const ColumnsWorkingPosition: TableProps<IWorkingPosition>['columns'] = [
         dataIndex: 'descr',
         key: 'descr',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsWorkload: TableProps<IWorkload>['columns'] = [
     {
@@ -675,16 +675,16 @@ export const ColumnsWorkload: TableProps<IWorkload>['columns'] = [
         dataIndex: 'group',
         key: 'group',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];
 export const ColumnsWorkloadAssign: TableProps<IWorkloadAssign>['columns'] = [
     {
@@ -717,14 +717,14 @@ export const ColumnsWorkloadAssign: TableProps<IWorkloadAssign>['columns'] = [
         dataIndex: 'isContract',
         key: 'isContract',
     },
-    {
-        title: 'Действие',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Изменить</a>
-                <a>Удалить</a>
-            </Space>
-        ),
-    },
+    // {
+    //     title: 'Действие',
+    //     key: 'action',
+    //     render: (_, record) => (
+    //         <Space size="middle">
+    //             <a>Изменить</a>
+    //             <a>Удалить</a>
+    //         </Space>
+    //     ),
+    // },
 ];

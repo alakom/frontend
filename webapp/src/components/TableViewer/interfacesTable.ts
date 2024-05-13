@@ -139,7 +139,7 @@ export interface IWorkload{
     discipline?: number;
     studyYear?: number;
     semester?: number;
-    group?: number;
+    IdGroup?: number;
 }
 export interface IWorkloadAssign{
     id?: number;

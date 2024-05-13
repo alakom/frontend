@@ -10,6 +10,12 @@ import TableViewer from "../../components/TableViewer/TableViewer";
 import Title from "antd/lib/typography/Title";
 
 const {Header, Content, Footer, Sider} = Layout;
+import {Navigate, Route, Routes, useNavigate} from 'react-router-dom';
+import TablePage from "../../pages/TablePage";
+import ReportPlanPage from "../../pages/ReportPlanPage";
+import ReportSemesterPage from "../../pages/ReportSemesterPage";
+import ReportWorkloadPage from "../../pages/ReportWorkloadPage";
+import ManagePage from "../../pages/ManagePage";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -17,7 +23,7 @@ function getItem(
     label: React.ReactNode,
     key: React.Key,
     icon?: React.ReactNode,
-    children?: MenuItem[],
+    children?: MenuItem[] | null,
 ): MenuItem {
     return {
         key,
@@ -28,40 +34,43 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-    getItem('Таблицы', '1', <TableOutlined/>),
+    getItem('Таблицы', '/table', <TableOutlined/>, null, ""),
     getItem('Отчёты', 'sub1', <FundOutlined/>, [
-        getItem('Tom', '2'),
-        getItem('Bill', '3'),
-        getItem('Alex', '4'),
-    ]),
-    getItem('Управление базой данных', '5', <PlusSquareOutlined/>),
+        getItem('Индивидуальный план', '/report/plan'),
+        getItem('Нагрузка', "/report/workload"),
+        getItem('Семестр', '/report/semester'),
+    ], "/report"),
+    getItem('Управление БД', '/database', <PlusSquareOutlined/>),
 ];
 
 const MainContainer: React.FC = () => {
-    const {
-        token: { colorBgContainer, borderRadiusLG },
-    } = theme.useToken();
+    const navigate = useNavigate();
 
     return (
-        <Layout hasSider >
+        <Layout hasSider>
             <Sider theme="light"
-                style={{ overflow: 'hidden', height: '200vh', position: 'fixed', left: 0, top: 0, bottom: 0, zIndex: 2 }}
+                   style={{
+                       overflow: 'hidden',
+                       height: '200vh',
+                       position: 'fixed',
+                       left: 0,
+                       top: 0,
+                       bottom: 0,
+                       zIndex: 2
+                   }}
             >
-                <div className="demo-logo-vertical" />
-                <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} items={items} />
+                <div className="demo-logo-vertical"/>
+                <Menu theme="light" mode="inline" defaultSelectedKeys={['1']} items={items} onClick={(item) => navigate(item.key)}/>
             </Sider>
-            <Layout style={{ marginLeft: 200, background: '#F5F5F5', minHeight: '100%' }}>
-                <Header style={{ padding: 0, background: colorBgContainer, display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                    <Title level={3} style={{ margin: '0 0 0 5px', flex: 1 }}>
-                        Редактирование таблиц
-                    </Title>
-                </Header>
-
-                <Content style={{ margin: '24px 16px 0', overflow: 'initial', minHeight: '80%' }}>
-                    <TableViewer/>
-                </Content>
-                <Footer style={{ textAlign: 'center' }}>
-                </Footer>
+            <Layout style={{marginLeft: 200, background: '#F5F5F5', minHeight: '100%'}}>
+                <Routes>
+                    <Route path="/table" element={<TablePage/>}/>
+                    <Route path="/report/plan" element={<ReportPlanPage/>}/>
+                    <Route path="/report/semester" element={<ReportSemesterPage/>}/>
+                    <Route path="/report/workload" element={<ReportWorkloadPage/>}/>
+                    <Route path="/database" element={<ManagePage/>}/>
+                </Routes>
+                <Footer style={{textAlign: 'center'}}/>
             </Layout>
         </Layout>
     );

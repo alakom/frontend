@@ -5,11 +5,12 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 interface ISemester{
     year: number;
     isAutumn: boolean;
+    messageApi: any;
 }
 // Создание API
 export const fetchSemesterReport = createAsyncThunk(
     'report/fetchSemesterReport',
-    async ({ year, isAutumn }: ISemester, thunkAPI) => {
+    async ({ year, isAutumn,messageApi }: ISemester, thunkAPI) => {
         try {
             const response = await fetch(apiUrl.getSemester(year,isAutumn), {
                 method: 'GET',
@@ -30,9 +31,20 @@ export const fetchSemesterReport = createAsyncThunk(
             a.download = `${isAutumn ? "ОсеннийСеместр" : "ВесеннийСеместр"}${year}.xlsx`;
             document.body.appendChild(a);
             a.click();
-
             URL.revokeObjectURL(url);
+            messageApi.open({
+                key: 'updatable',
+                type: 'success',
+                content: 'Отчёт получен',
+                duration: 2,
+            });
         } catch (error) {
+            messageApi.open({
+                key: 'updatable',
+                type: 'error',
+                content: 'Произошла ошибка при генерации отчёта',
+                duration: 2,
+            });
             return thunkAPI.rejectWithValue(error.message);
         }
     }

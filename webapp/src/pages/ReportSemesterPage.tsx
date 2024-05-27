@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Layout, theme} from 'antd';
+import {Button, Layout, message, theme} from 'antd';
 import Title from "antd/lib/typography/Title";
 import SelectYear from "../components/SelectYear/SelectYear";
 import {useGetTableQuery} from "../api/tableApi";
@@ -17,7 +17,23 @@ const ReportSemesterPage = () => {
     const {data: years} = useGetTableQuery('study-year');
     const [valueYear, setValueYear] = useState<number | null>(null);
     const [isAutumn, setIsAutumn] = useState<boolean | null>(null);
+    const [messageApi, contextHolder] = message.useMessage();
     const dispatch = useDispatch();
+
+    const getFile = () => {
+        messageApi.open({
+            key: 'updatable',
+            type: 'loading',
+            content: 'Генерируем отчёт',
+        });
+        const data = {
+            year: valueYear,
+            isAutumn: isAutumn,
+            messageApi: messageApi
+        }
+        dispatch(fetchSemesterReport(data));
+    };
+
     return (
         <>
             <Header style={{
@@ -43,14 +59,13 @@ const ReportSemesterPage = () => {
                 <SelectSemester changeValue={setIsAutumn}/>
                 <Button
                     type="primary"
-                    onClick={() => {
-                        dispatch(fetchSemesterReport({year: valueYear, isAutumn: isAutumn}))
-                    }}
+                    onClick={getFile}
                     style={{margin: '27px 0 5px 0', width: '300px'}}
                     disabled={isAutumn === null || !valueYear}
                 >
                     Экспортировать отчёт
                 </Button>
+                {contextHolder}
             </Content>
         </>
     );

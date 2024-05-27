@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import SelectTable from "../SelectTable/SelectTable";
 import OptionTable from "./OptionTable";
 import CustomTable from "../CustomTable/CustomTable";
@@ -21,12 +21,16 @@ import {
     ColumnsStudyYear, ColumnsWorkingPosition, ColumnsWorkload, ColumnsWorkloadAssign
 } from "./ColumnsTable";
 import {useLazyGetTableQuery} from "../../api/tableApi";
+import {message} from "antd";
+import {Simulate} from "react-dom/test-utils";
+import error = Simulate.error;
 
 const TableViewer = () => {
     const [currentTable, setCurrentTable] = useState('');
     const [currentColumn, setCurrentColumn] = useState(null);
     const [tableData, setTableData] = useState([]);
     const [fetchTable] = useLazyGetTableQuery();
+    const [messageApi, contextHolder] = message.useMessage();
 
     const changeColumn = (newValue: string) => {
         switch (newValue) {
@@ -94,14 +98,23 @@ const TableViewer = () => {
         if (value !== currentTable) {
             setCurrentTable(value);
             changeColumn(value);
-            fetchTable(value).then(({data}) => {
-                setTableData(data)
+            fetchTable(value).then((result) => {
+                if(result.error){
+                    messageApi.open({
+                        key: 'updatable',
+                        type: 'error',
+                        content: 'Произошла ошибка при получении данных',
+                        duration: 2,
+                    });
+                }
+                setTableData(result.data);
             })
         }
     };
 
     return (
         <>
+            {contextHolder}
             <SelectTable optionsTable={OptionTable} changeValue={changeTable}/>
             <CustomTable columns={currentColumn} data={tableData}/>
         </>

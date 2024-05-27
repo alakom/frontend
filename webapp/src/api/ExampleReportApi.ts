@@ -5,7 +5,7 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 // Создание API
 export const fetchExampleReport = createAsyncThunk(
     'report/fetchExampleReport',
-    async (thunkAPI) => {
+    async (messageApi,thunkAPI) => {
         try {
             const response = await fetch(apiUrl.getExample(), {
                 method: 'GET',
@@ -26,9 +26,21 @@ export const fetchExampleReport = createAsyncThunk(
             a.download = `ПримерВходногоФайла.xlsx`;
             document.body.appendChild(a);
             a.click();
-
             URL.revokeObjectURL(url);
+            messageApi.open({
+                key: 'updatable',
+                type: 'success',
+                content: 'Файл получен',
+                duration: 2,
+            });
+
         } catch (error) {
+            messageApi.open({
+                key: 'updatable',
+                type: 'error',
+                content: 'Произошла ошибка при получении файла',
+                duration: 2,
+            });
             return thunkAPI.rejectWithValue(error.message);
         }
     }

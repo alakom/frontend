@@ -5,7 +5,7 @@ import {
     PlusSquareOutlined,
 } from '@ant-design/icons';
 import type {MenuProps} from 'antd';
-import {Layout, Menu, theme, Typography} from 'antd';
+import {Layout, Menu, message, theme, Typography} from 'antd';
 import TableViewer from "../../components/TableViewer/TableViewer";
 import Title from "antd/lib/typography/Title";
 
@@ -15,7 +15,8 @@ import TablePage from "../../pages/TablePage";
 import ReportPlanPage from "../../pages/ReportPlanPage";
 import ReportSemesterPage from "../../pages/ReportSemesterPage";
 import ReportWorkloadPage from "../../pages/ReportWorkloadPage";
-import ManagePage from "../../pages/ManagePage";
+import AddYear from "../../pages/AddYear";
+import DeleteYear from "../../pages/DeleteYear";
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -36,15 +37,19 @@ function getItem(
 const items: MenuItem[] = [
     getItem('Таблицы', '/table', <TableOutlined/>, null, ""),
     getItem('Отчёты', 'sub1', <FundOutlined/>, [
-        getItem('Индивидуальный план', '/report/plan'),
+        getItem('План', '/report/plan'),
         getItem('Нагрузка', "/report/workload"),
         getItem('Семестр', '/report/semester'),
-    ], "/report"),
-    getItem('Управление БД', '/database', <PlusSquareOutlined/>),
+    ]),
+    getItem('Управление БД', 'sub2', <PlusSquareOutlined/>,[
+        getItem('Добавление года', '/database/add-year'),
+        getItem('Удаление года', "/database/delete-year"),
+    ]),
 ];
 
 const MainContainer: React.FC = () => {
     const navigate = useNavigate();
+    const [contextHolder] = message.useMessage();
 
     return (
         <Layout hasSider>
@@ -68,7 +73,8 @@ const MainContainer: React.FC = () => {
                     <Route path="/report/plan" element={<ReportPlanPage/>}/>
                     <Route path="/report/semester" element={<ReportSemesterPage/>}/>
                     <Route path="/report/workload" element={<ReportWorkloadPage/>}/>
-                    <Route path="/database" element={<ManagePage/>}/>
+                    <Route path="/database/add-year" element={<AddYear/>}/>
+                    <Route path="/database/delete-year" element={<DeleteYear/>}/>
                 </Routes>
                 <Footer style={{textAlign: 'center'}}/>
             </Layout>
